@@ -1,12 +1,12 @@
 import sys
 import math
 
-def get_coef(prompt):
+def get_coef(index, prompt):
     
     # Вводим с клавиатуры
     print(prompt)
     coef_str = input()
-    '''try:
+    try:
         coef = float(coef_str)
     except:
         flag = False
@@ -18,7 +18,7 @@ def get_coef(prompt):
                 flag = True
             except:
                 flag = False
-    '''            
+               
     # Переводим строку в действительное число
     coef = float(coef_str)
     return coef
