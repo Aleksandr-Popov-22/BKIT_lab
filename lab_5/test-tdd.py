@@ -1,21 +1,31 @@
-from biqr_lab1 import sys, math, get_coef, get_roots
 import unittest
+from biqr_mod import get_roots
 
-class BiQrTest(unittest.TestCase):
+class SquareEqSolverTestCase(unittest.TestCase):
+   def test_no_root(self):
+       res = get_roots(1, 11, 10)
+       self.assertEqual(len(res), 0)
 
-    def test_1(self):
-        self.assertEqual(get_roots(1,5,-36),[2,-2])
+   def test_single_root(self):
+       res = get_roots(10, 0, 0)
+       self.assertEqual(len(res), 1)
+       self.assertEqual(res, [0])
 
+   def test_two_roots(self):
+       res = get_roots(1, -2, -8)
+       self.assertEqual(len(res), 2)
+       self.assertEqual(res, [2.0, -2.0])
 
-    def test_2(self):
-        self.assertEqual(get_roots(3,5,6),[])
+   def test_three_roots(self):
+       res = get_roots(-4, 16, 0)
+       self.assertEqual(len(res), 1)
+       self.assertEqual(res, [0])
 
+   def test_four_roots(self):
+       res = get_roots(1, -10, 9)
+       self.assertEqual(len(res), 4)
+       self.assertEqual(res, [3.0, -3.0, 1.0, -1.0])
 
-    def test_3(self):
-
-        with self.assertRaises(ValueError):
-            get_coef('input')
-            
 if __name__ == '__main__':
     unittest.main()
          
