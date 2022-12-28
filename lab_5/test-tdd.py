@@ -1,4 +1,4 @@
-from biqr_mod import sys, math, get_coef, get_roots
+from biqr_lab1 import sys, math, get_coef, get_roots
 import unittest
 
 class BiQrTest(unittest.TestCase):
