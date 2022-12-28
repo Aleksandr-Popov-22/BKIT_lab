@@ -1,5 +1,5 @@
 import unittest
-from biqr_mod import get_roots
+from biqr_lab1 import get_roots
 
 class SquareEqSolverTestCase(unittest.TestCase):
    def test_no_root(self):
